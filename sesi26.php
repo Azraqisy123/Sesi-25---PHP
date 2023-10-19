@@ -22,8 +22,8 @@
     echo "<br>";
 
     echo "Soal Nomor 3 <br>";
-    for ($i=1; $i <10 ; $i++) {
-        for ($a=10-$i; $a >0 ; $a--) { 
+    for ($i=10; $i >=1 ; $i--) {
+        for ($a=1; $a <$i ; $a++) { 
             echo "$a";
         } 
         echo "<br>";
