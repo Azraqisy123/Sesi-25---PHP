@@ -24,12 +24,13 @@
             <td>Kelas</td>
         </tr>
         <?php
-            for ($i=1; $i <10 ; $i++) { 
+            $angka = 10;
+            for ($i=1; $i <=10 ; $i++) { 
         ?>
             <tr>
                 <td>No <?php echo "$i" ?></td>
                 <td>Name ke <?php echo "$i" ?></td>
-                <td>Kelas</td>
+                <td>Kelas <?php echo "$angka"; $angka--;?></td>
             </tr>
         <?php
             }
