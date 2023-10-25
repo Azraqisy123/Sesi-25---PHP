@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-    echo "Soal Nomor 1 <br>";
+    echo "Soal Nomor 1";
     for ($i=0; $i <=9 ; $i++) {
         for ($a=0; $a <$i ; $a++) { 
             echo "$a";
@@ -25,10 +25,18 @@
         </tr>
         <?php
             $angka = 10;
-            for ($i=1; $i <=10 ; $i++) { 
+            for ($i=1; $i <=10 ; $i++) {
         ?>
-            <tr>
-                <td>No <?php echo "$i" ?></td>
+        <?php
+            if ($i % 2 == 0) {
+                $color = "white";
+            }
+            else {
+                $color = "#D3D3D3";
+            }
+        ?>
+            <tr style = "background-color : <?php echo $color ?>;">
+                <td>No <?php echo "$i"?></td>
                 <td>Name ke <?php echo "$i" ?></td>
                 <td>Kelas <?php echo "$angka"; $angka--;?></td>
             </tr>
