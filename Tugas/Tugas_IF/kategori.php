@@ -10,16 +10,13 @@ $BMI = $berat_badan / ($tinggi_badan * $berat_badan);
 
 //Kategori BMI 
 if ($BMI < 18.5) {
-    $kategori = "kekurangan Berat Badan (Underweight)";
+    $kategori = "kekurangan Berat Badan (Kurus)";
 }
 elseif ($BMI >= 18.5 && $BMI < 24.9) {
     $kategori = "Berat Badan Normal";
 }
 elseif ($BMI >= 25 && $BMI < 29.9) {
-    $kategori = "Berat Badan Berlebih (Overweight)";
-}
-else {
-    $kategori = "Obesitas";
+    $kategori = "Berat Badan Berlebih (Gemuk)";
 }
 
 //Hasil BMI
