@@ -1,6 +1,6 @@
 <?php 
 include "connection.php";
-$query = mysqli_query ($connection, "SELECT * FROM anggota");
+$query = mysqli_query ($connection, "SELECT * FROM buku");
 ?>
 
 <!DOCTYPE html>
@@ -16,19 +16,19 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
     <div class="bg-dark m-2">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand disabled text-light fw-bold">DATABASE - ANGGOTA</a>
+                <a class="navbar-brand disabled text-light fw-bold">DATABASE - BUKU</a>
                 <ul class="nav nav-pills justify-content-end nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link link-light active" aria-current="page" href="index.php">ANGGOTA</a>
+                    <a class="nav-link link-light" href="index.php">ANGGOTA</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link link-light" href="penerbit.php">PENERBIT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="pengarang.php">PENGARANG</a>
+                    <a class="nav-link link-light " href="pengarang.php">PENGARANG</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-light" href="buku.php">BUKU</a>
+                    <a class="nav-link link-light active" href="buku.php">BUKU</a>
                 </li>
             </ul>
             </div>
@@ -38,11 +38,12 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
         <table class = "table table-striped mx-auto">
             <thead class = "table-dark">
                 <tr>
-                    <th scope = "col">Nama</th>
-                    <th scope = "col">Username</th>
-                    <th scope = "col">Jenis Kelamin</th>
-                    <th scope = "col">Telepon</th>
-                    <th scope = "col">Alamat</th>
+                    <th scope = "col">ISBN</th>
+                    <th scope = "col">Judul Buku</th>
+                    <th scope = "col">Tahun</th>
+                    <th scope = "col">Stok</th>
+                    <th scope = "col">Harga Peminjaman</th>
+
                 </tr>
             </thead>
             
@@ -50,11 +51,11 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
                 while ($data = mysqli_fetch_array($query)){ ?>
 
             <tbody>
-                <td><?php echo $data["nama"]; ?></td>
-                <td><?php echo $data["username"]; ?></td>
-                <td><?php echo $data["sex"]; ?></td>
-                <td><?php echo $data["telp"]; ?></td>
-                <td><?php echo $data["alamat"]; ?></td>
+                <td><?php echo $data["isbn"]; ?></td>
+                <td><?php echo $data["judul"]; ?></td>
+                <td><?php echo $data["tahun"]; ?></td>
+                <td><?php echo $data["qty_stok"]; ?></td>
+                <td><?php echo "Rp" . number_format($data["harga_pinjam"])  ?></td>
             </tbody>
 
         <?php } ?>

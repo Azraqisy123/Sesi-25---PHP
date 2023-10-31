@@ -1,6 +1,6 @@
 <?php 
 include "connection.php";
-$query = mysqli_query ($connection, "SELECT * FROM anggota");
+$query = mysqli_query ($connection, "SELECT * FROM penerbit");
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +16,13 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
     <div class="bg-dark m-2">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand disabled text-light fw-bold">DATABASE - ANGGOTA</a>
+                <a class="navbar-brand disabled text-light fw-bold">DATABASE - PENERBIT</a>
                 <ul class="nav nav-pills justify-content-end nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link link-light active" aria-current="page" href="index.php">ANGGOTA</a>
+                    <a class="nav-link link-light" href="index.php">ANGGOTA</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link link-light" href="penerbit.php">PENERBIT</a>
+                    <a class="nav-link link-light active" href="penerbit.php">PENERBIT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link-light" href="pengarang.php">PENGARANG</a>
@@ -38,9 +38,8 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
         <table class = "table table-striped mx-auto">
             <thead class = "table-dark">
                 <tr>
-                    <th scope = "col">Nama</th>
-                    <th scope = "col">Username</th>
-                    <th scope = "col">Jenis Kelamin</th>
+                    <th scope = "col">Nama Penerbit</th>
+                    <th scope = "col">Email</th>
                     <th scope = "col">Telepon</th>
                     <th scope = "col">Alamat</th>
                 </tr>
@@ -50,9 +49,8 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
                 while ($data = mysqli_fetch_array($query)){ ?>
 
             <tbody>
-                <td><?php echo $data["nama"]; ?></td>
-                <td><?php echo $data["username"]; ?></td>
-                <td><?php echo $data["sex"]; ?></td>
+                <td><?php echo $data["nama_penerbit"]; ?></td>
+                <td><?php echo $data["email"]; ?></td>
                 <td><?php echo $data["telp"]; ?></td>
                 <td><?php echo $data["alamat"]; ?></td>
             </tbody>
