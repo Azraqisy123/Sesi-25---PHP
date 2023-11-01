@@ -57,6 +57,7 @@ $query = mysqli_query ($connection, "SELECT * FROM pengarang");
 
         <?php } ?>
         </table>
+        <a class="btn btn-primary" href="Pengarang/add_data_pengarang.php" role="button">Tambah Data</a>
     </div>
 </body>
 </html>

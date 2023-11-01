@@ -60,6 +60,7 @@ $query = mysqli_query ($connection, "SELECT * FROM buku");
 
         <?php } ?>
         </table>
+        <a class="btn btn-primary" href="Buku/add_data_buku.php" role="button">Tambah Data</a>  
     </div>
 </body>
 </html>

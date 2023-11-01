@@ -40,18 +40,19 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
                 <tr>
                     <th scope = "col">Nama</th>
                     <th scope = "col">Username</th>
+                    <th scope = "col">Password</th>
                     <th scope = "col">Jenis Kelamin</th>
                     <th scope = "col">Telepon</th>
                     <th scope = "col">Alamat</th>
                 </tr>
             </thead>
-            
             <?php 
                 while ($data = mysqli_fetch_array($query)){ ?>
 
             <tbody>
                 <td><?php echo $data["nama"]; ?></td>
                 <td><?php echo $data["username"]; ?></td>
+                <td><?php echo $data["password"]; ?></td>
                 <td><?php echo $data["sex"]; ?></td>
                 <td><?php echo $data["telp"]; ?></td>
                 <td><?php echo $data["alamat"]; ?></td>
@@ -59,6 +60,7 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
 
         <?php } ?>
         </table>
+        <a class="btn btn-primary" href="Anggota/add_data_anggota.php" role="button">Tambah Data</a>
     </div>
 </body>
 </html>

@@ -57,6 +57,7 @@ $query = mysqli_query ($connection, "SELECT * FROM penerbit");
 
         <?php } ?>
         </table>
+        <a class="btn btn-primary" href="Penerbit/add_data_penerbit.php" role="button">Tambah Data</a>
     </div>
 </body>
 </html>
