@@ -54,7 +54,7 @@ $query = mysqli_query ($connection, "SELECT * FROM penerbit");
                 <td><?php echo $data["alamat"]; ?></td>
                 <td>
                     <a href="Penerbit/edit_penerbit.php?id=<?php echo $data['id_penerbit']; ?>" class = "btn btn-warning btn-sm">Edit</a>
-                    <a href="Penerbit/delete_penerbit.php?id=<?php echo $data['id_penerbit']; ?>" class = "btn btn-danger btn-sm">Delete</a>
+                    <a href="Penerbit/delete_penerbit.php?id=<?php echo $data['id_penerbit']; ?>" class = "btn btn-danger btn-sm" onclick = "return confirm('Hapus Item?');">Delete</a>
                 </td>
             </tr>
 

@@ -57,7 +57,7 @@ $query = mysqli_query ($connection, "SELECT * FROM buku");
                     <td><?php echo "Rp" . number_format($data["harga_pinjam"])  ?></td>
                     <td>
                         <a href="Buku/edit_buku.php?id=<?php echo $data['isbn']; ?>" class = "btn btn-warning btn-sm">Edit</a>
-                        <a href="Buku/delete_buku.php?id=<?php echo $data['isbn']; ?>" class = "btn btn-danger btn-sm">Delete</a>
+                        <a href="Buku/delete_buku.php?id=<?php echo $data['isbn']; ?>" class = "btn btn-danger btn-sm" onclick = "return confirm('Hapus Item?');">Delete</a>
                     </td>
                 </tr>
         <?php } ?>

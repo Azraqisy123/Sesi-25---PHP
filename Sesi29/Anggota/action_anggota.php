@@ -13,4 +13,6 @@ mysqli_query($connection,
 "INSERT INTO `anggota` (`nama`, `sex`, `telp`, `alamat`) 
 VALUES ('$nama', '$jenis_kelamin', '$telp', '$alamat'); ");
 
+header("Location: ../index.php");
+
 ?>

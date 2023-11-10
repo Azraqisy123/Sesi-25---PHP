@@ -56,7 +56,7 @@ $query = mysqli_query ($connection, "SELECT * FROM anggota");
                 <td><?php echo $data["alamat"]; ?></td>
                 <td>
                     <a href="Anggota/edit_anggota.php?id=<?php echo $data['id_anggota']; ?>" class = "btn btn-warning btn-sm">Edit</a>
-                    <a href="Anggota/delete_anggota.php?id=<?php echo $data['id_anggota']; ?>" class = "btn btn-danger btn-sm">Delete</a>
+                    <a href="Anggota/delete_anggota.php?id=<?php echo $data['id_anggota']; ?>" class = "btn btn-danger btn-sm" onclick = "return confirm('Hapus Item?');">Delete</a>
             </tr>
 
         <?php } ?>
