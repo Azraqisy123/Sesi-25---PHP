@@ -35,25 +35,28 @@ $query = mysqli_query ($connection, "SELECT * FROM pengarang");
         </nav>
     </div>
     <div class = "container">
-        <table class = "table table-striped mx-auto">
-            <thead class = "table-dark">
-                <tr>
-                    <th scope = "col">Nama Pengarang</th>
-                    <th scope = "col">Email</th>
-                    <th scope = "col">Telepon</th>
-                    <th scope = "col">Alamat</th>
-                </tr>
-            </thead>
+        <table class = "table table-dark table-striped mx-auto">
+            <tr>
+                <th scope = "col">Nama Pengarang</th>
+                <th scope = "col">Email</th>
+                <th scope = "col">Telepon</th>
+                <th scope = "col">Alamat</th>
+                <th scope = "col"></th>
+            </tr>
             
             <?php 
                 while ($data = mysqli_fetch_array($query)){ ?>
 
-            <tbody>
+            <tr class = "table-light">
                 <td><?php echo $data["nama_pengarang"]; ?></td>
                 <td><?php echo $data["email"]; ?></td>
                 <td><?php echo $data["telp"]; ?></td>
                 <td><?php echo $data["alamat"]; ?></td>
-            </tbody>
+                <td>
+                    <a href="Pengarang/edit_pengarang.php?id=<?php echo $data['id_pengarang']; ?>" class = "btn btn-warning btn-sm">Edit</a>
+                    <a href="Pengarang/delete_pengarang.php?id=<?php echo $data['id_pengarang']; ?>" class = "btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
 
         <?php } ?>
         </table>

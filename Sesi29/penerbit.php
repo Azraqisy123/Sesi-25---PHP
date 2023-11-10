@@ -35,25 +35,28 @@ $query = mysqli_query ($connection, "SELECT * FROM penerbit");
         </nav>
     </div>
     <div class = "container">
-        <table class = "table table-striped mx-auto">
-            <thead class = "table-dark">
-                <tr>
-                    <th scope = "col">Nama Penerbit</th>
-                    <th scope = "col">Email</th>
-                    <th scope = "col">Telepon</th>
-                    <th scope = "col">Alamat</th>
-                </tr>
-            </thead>
+        <table class = "table table-dark table-striped mx-auto">
+            <tr>
+                <th scope = "col">Nama Penerbit</th>
+                <th scope = "col">Email</th>
+                <th scope = "col">Telepon</th>
+                <th scope = "col">Alamat</th>
+                <th scope = "col"></th>
+            </tr>
             
             <?php 
                 while ($data = mysqli_fetch_array($query)){ ?>
 
-            <tbody>
+            <tr class ="table-light">
                 <td><?php echo $data["nama_penerbit"]; ?></td>
                 <td><?php echo $data["email"]; ?></td>
                 <td><?php echo $data["telp"]; ?></td>
                 <td><?php echo $data["alamat"]; ?></td>
-            </tbody>
+                <td>
+                    <a href="Penerbit/edit_penerbit.php?id=<?php echo $data['id_penerbit']; ?>" class = "btn btn-warning btn-sm">Edit</a>
+                    <a href="Penerbit/delete_penerbit.php?id=<?php echo $data['id_penerbit']; ?>" class = "btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
 
         <?php } ?>
         </table>

@@ -46,7 +46,6 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td></td>
                         </tr>
                 </table>
                 <a class="btn btn btn-outline-primary" href="http://www.localhost/Tugas_PHP/Sesi29/index.php" role="button">Kembali</a>

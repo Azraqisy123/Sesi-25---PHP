@@ -35,29 +35,31 @@ $query = mysqli_query ($connection, "SELECT * FROM buku");
         </nav>
     </div>
     <div class = "container">
-        <table class = "table table-striped mx-auto">
-            <thead class = "table-dark">
+        <table class = "table table-dark table-striped mx-auto">
                 <tr>
                     <th scope = "col">ISBN</th>
                     <th scope = "col">Judul Buku</th>
                     <th scope = "col">Tahun</th>
                     <th scope = "col">Stok</th>
                     <th scope = "col">Harga Peminjaman</th>
+                    <th scope = "col"></th>
 
                 </tr>
-            </thead>
             
             <?php 
                 while ($data = mysqli_fetch_array($query)){ ?>
 
-            <tbody>
-                <td><?php echo $data["isbn"]; ?></td>
-                <td><?php echo $data["judul"]; ?></td>
-                <td><?php echo $data["tahun"]; ?></td>
-                <td><?php echo $data["qty_stok"]; ?></td>
-                <td><?php echo "Rp" . number_format($data["harga_pinjam"])  ?></td>
-            </tbody>
-
+                <tr class = "table-light">
+                    <td><?php echo $data["isbn"]; ?></td>
+                    <td><?php echo $data["judul"]; ?></td>
+                    <td><?php echo $data["tahun"]; ?></td>
+                    <td><?php echo $data["qty_stok"]; ?></td>
+                    <td><?php echo "Rp" . number_format($data["harga_pinjam"])  ?></td>
+                    <td>
+                        <a href="Buku/edit_buku.php?id=<?php echo $data['isbn']; ?>" class = "btn btn-warning btn-sm">Edit</a>
+                        <a href="Buku/delete_buku.php?id=<?php echo $data['isbn']; ?>" class = "btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
         <?php } ?>
         </table>
         <a class="btn btn-primary" href="Buku/add_data_buku.php" role="button">Tambah Data</a>  
